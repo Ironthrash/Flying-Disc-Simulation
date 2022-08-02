@@ -59,7 +59,7 @@ int main(){
 
     static double xInit = 0;
     //the initial x position of the frisbee
-    static double yInit = 1;
+    static double yInit = 0.3048;
     //the initial y position of the frisbee
 
     double vInit = 8.924544;
