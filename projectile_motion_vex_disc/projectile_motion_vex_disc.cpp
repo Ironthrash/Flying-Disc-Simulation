@@ -152,7 +152,7 @@ int main(){
 
     ofstream fw("C:\\Users\\chris\\Documents\\vex-disc-sim-with-disc-values.txt", std::ofstream::out);
     //opens up a text file. ^^^^^^^^^^^^^^^^^^^^^^^^^^       ^ This is the text files name
-    //                      CHANGE THIS TO A FILE ON YOUR OWN COMPUTER BEFORE RUNNING. I have literally no idea what will happen if you don't.
+    //                      CHANGE THIS TO A FOLDER ON YOUR OWN COMPUTER BEFORE RUNNING. I have literally no idea what will happen if you don't.
 
     cout << "y value after termination: " << y << ", desired y value: " << yDes << ", velocity after termination: " << v << endl;
     //prints out the final simulated y value, the desired y value, and the required velocity to the output
