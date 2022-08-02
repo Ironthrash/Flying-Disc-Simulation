@@ -24,13 +24,13 @@ int main(){
     static double g = -9.81;
     //the force of gravity
 
-    static double m = 0.175;
+    static double m = 0.065;
     //the mass of the projectile
 
     static double RHO = 1.23;
     //the density of air in metric units
 
-    static double AREA = 0.0568;
+    static double AREA = 0.015;
     //the approximate area of the flat side of the frisbee
 
     static double CL0 = 0.1;
@@ -46,9 +46,9 @@ int main(){
     static double ALPHA0 = -4;
     //the angle of attack where the coefficient of drag is the lowest
 
-    static double xDes = 7;
+    static double xDes = 4.2672;
     //the x coordinate we want the frisbee to pass through
-    static double yDes = 7;
+    static double yDes = 0.762;
     //the y coordinate we want the frisbee to pass through
 
     static double maxError = 0.05;
@@ -62,7 +62,7 @@ int main(){
     static double yInit = 1;
     //the initial y position of the frisbee
 
-    double vInit = 14;
+    double vInit = 8.924544;
     //the initial velocity of the frisbee
 
     double x = xInit;
@@ -150,7 +150,7 @@ int main(){
     cout << "number of internal iterations: " << iterations << endl;
     //prints the number of iterations to the output
 
-    ofstream fw("C:\\Users\\chris\\Documents\\vex-disc-sim(13).txt", std::ofstream::out);
+    ofstream fw("C:\\Users\\chris\\Documents\\vex-disc-sim-with-disc-values.txt", std::ofstream::out);
     //opens up a text file. ^^^^^^^^^^^^^^^^^^^^^^^^^^       ^ This is the text files name
     //                      CHANGE THIS TO A FILE ON YOUR OWN COMPUTER BEFORE RUNNING. I have literally no idea what will happen if you don't.
 
