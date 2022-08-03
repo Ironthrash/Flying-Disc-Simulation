@@ -46,15 +46,15 @@ int main(){
     static double ALPHA0 = -4;
     //the angle of attack where the coefficient of drag is the lowest
 
-    static double xDes = 4.2672;
+    static double xDes = 1.905144705982368;
     //the x coordinate we want the frisbee to pass through
     static double yDes = 0.762;
     //the y coordinate we want the frisbee to pass through
 
-    static double maxError = 0.05;
+    static double maxError = 0.001;
     //the level of error we want our disc to be under
 
-    static double Kp = 0.5;
+    static double Kp = 1.8;
     //a constant used as part of a PID loop later
 
     static double xInit = 0;
@@ -62,7 +62,7 @@ int main(){
     static double yInit = 0.3048;
     //the initial y position of the frisbee
 
-    double vInit = 8.924544;
+    double vInit = 1;
     //the initial velocity of the frisbee
 
     double x = xInit;
@@ -90,7 +90,7 @@ int main(){
 
     double time = 0;
     //the current time of the simulation
-    double deltaT = 0.001;
+    double deltaT = 0.0001;
     //the difference in time between each iteration
 
     double CL = CL0 + CLA*ALPHA*M_PI/180;
@@ -150,7 +150,7 @@ int main(){
     cout << "number of internal iterations: " << iterations << endl;
     //prints the number of iterations to the output
 
-    ofstream fw("C:\\Users\\chris\\Documents\\vex-disc-sim-with-disc-values.txt", std::ofstream::out);
+    ofstream fw("C:\\Users\\chris\\Documents\\test-for-accuracy.txt", std::ofstream::out);
     //opens up a text file. ^^^^^^^^^^^^^^^^^^^^^^^^^^       ^ This is the text files name
     //                      CHANGE THIS TO A FOLDER ON YOUR OWN COMPUTER BEFORE RUNNING. I have literally no idea what will happen if you don't.
 
