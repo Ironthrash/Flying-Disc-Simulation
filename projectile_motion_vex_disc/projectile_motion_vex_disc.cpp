@@ -85,6 +85,8 @@ int main(){
     double deltavy = 0;
     //the difference in the y compoenet of the velocity of the frisbee
 
+    double discAngle = 40;
+
     double ALPHA = 40;
     //the angle of the attack of the frisbee
 
@@ -111,6 +113,11 @@ int main(){
         //resets the time after the simulation
 
         while(x < xDes){
+            ALPHA = discAngle - atan(vy/vx);
+
+            CL = CL0 + CLA*ALPHA*M_PI/180;
+            CD = CD0 + CDA*pow((ALPHA - ALPHA0)*M_PI/180, 2);
+
             deltavx = -RHO*pow(vx, 2)*AREA*CD*deltaT;
             //calculates the change in the x component of the velocity over the change in time
             deltavy = (RHO*pow(vx, 2)*AREA*CL/2/m+g)*deltaT;
@@ -150,7 +157,7 @@ int main(){
     cout << "number of internal iterations: " << iterations << endl;
     //prints the number of iterations to the output
 
-    ofstream fw("C:\\Users\\chris\\Documents\\test-for-accuracy.txt", std::ofstream::out);
+    ofstream fw("C:\\Users\\chris\\Documents\\test-with-good-alpha.txt", std::ofstream::out);
     //opens up a text file. ^^^^^^^^^^^^^^^^^^^^^^^^^^       ^ This is the text files name
     //                      CHANGE THIS TO A FOLDER ON YOUR OWN COMPUTER BEFORE RUNNING. I have literally no idea what will happen if you don't.
 
@@ -166,6 +173,11 @@ int main(){
     //resets the time of the simulation
 
     while(y > 0){
+        ALPHA = discAngle - atan(vy/vx);
+
+        CL = CL0 + CLA*ALPHA*M_PI/180;
+        CD = CD0 + CDA*pow((ALPHA - ALPHA0)*M_PI/180, 2);
+
         deltavx = -RHO*pow(vx, 2)*AREA*CD*deltaT;
         //calculates the change in the x component of the velocity over the change in time
         deltavy = (RHO*pow(vx, 2)*AREA*CL/2/m+g)*deltaT;
