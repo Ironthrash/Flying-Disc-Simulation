@@ -21,45 +21,45 @@ float abs2 (float value){
 
 int main(){
 
-    static double g = -9.81;
+    double g = -9.81;
     //the force of gravity
 
-    static double m = 0.065;
+    double m = 0.065;
     //the mass of the projectile
 
-    static double RHO = 1.23;
+    double RHO = 1.23;
     //the density of air in metric units
 
-    static double AREA = 0.015;
+    double AREA = 0.015;
     //the approximate area of the flat side of the frisbee
 
-    static double CL0 = 0.1;
+    double CL0 = 0.1;
     //the coefficient of lift independent of the angle of attack
-    static double CLA = 1.4;
+    double CLA = 1.4;
     //the coefficient of lift dependent on the angle of attack
 
-    static double CD0 = 0.08;
+    double CD0 = 0.08;
     //the coefficient of drag independent of the angle of attack
-    static double CDA = 2.72;
+    double CDA = 2.72;
     //the coefficient of drag dependent on the angle of attack
 
-    static double ALPHA0 = -4;
+    double ALPHA0 = 0;
     //the angle of attack where the coefficient of drag is the lowest
 
-    static double xDes = 1.905144705982368;
+    double xDes = 1.905144705982368;
     //the x coordinate we want the frisbee to pass through
-    static double yDes = 0.762;
+    double yDes = 0.762;
     //the y coordinate we want the frisbee to pass through
 
-    static double maxError = 0.001;
+    double maxError = 0.001;
     //the level of error we want our disc to be under
 
-    static double Kp = 1.8;
+    double Kp = 1.8;
     //a constant used as part of a PID loop later
 
-    static double xInit = 0;
+    double xInit = 0;
     //the initial x position of the frisbee
-    static double yInit = 0.3048;
+    double yInit = 0.3048;
     //the initial y position of the frisbee
 
     double vInit = 1;
