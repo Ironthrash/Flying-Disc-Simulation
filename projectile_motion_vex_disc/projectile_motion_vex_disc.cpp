@@ -21,83 +21,83 @@ float abs2 (float value){
 
 int main(){
 
-    double g = -9.81;
+    float g = -9.81;
     //the force of gravity
 
-    double m = 0.065;
+    float m = 0.065;
     //the mass of the projectile
 
-    double RHO = 1.23;
+    float RHO = 1.23;
     //the density of air in metric units
 
-    double AREA = 0.015;
+    float AREA = 0.015;
     //the approximate area of the flat side of the frisbee
 
-    double CL0 = 0.1;
+    float CL0 = 0.1;
     //the coefficient of lift independent of the angle of attack
-    double CLA = 1.4;
+    float CLA = 1.4;
     //the coefficient of lift dependent on the angle of attack
 
-    double CD0 = 0.08;
+    float CD0 = 0.08;
     //the coefficient of drag independent of the angle of attack
-    double CDA = 2.72;
+    float CDA = 2.72;
     //the coefficient of drag dependent on the angle of attack
 
-    double ALPHA0 = 0;
+    float ALPHA0 = 0;
     //the angle of attack where the coefficient of drag is the lowest
 
-    double xDes = 1.905144705982368;
+    float xDes = 1.905144705982368;
     //the x coordinate we want the frisbee to pass through
-    double yDes = 0.762;
+    float yDes = 0.762;
     //the y coordinate we want the frisbee to pass through
 
-    double maxError = 0.001;
+    float maxError = 0.001;
     //the level of error we want our disc to be under
 
-    double Kp = 1.8;
+    float Kp = 1.8;
     //a constant used as part of a PID loop later
 
-    double xInit = 0;
+    float xInit = 0;
     //the initial x position of the frisbee
-    double yInit = 0.3048;
+    float yInit = 0.3;
     //the initial y position of the frisbee
 
-    double vInit = 1;
+    float vInit = 1;
     //the initial velocity of the frisbee
 
-    double x = xInit;
+    float x = xInit;
     //the current x position of the frisbee
-    double y = yInit;
+    float y = yInit;
     //the current y position of the frisbee
 
-    double v = vInit;
+    float v = vInit;
     //the current velocity of the frisbee
-    double vAngle = 40;
+    float vAngle = 40;
     //the initial angle of the velocity of the frisbee (should probably be called vAngleInit(whatever, suck it(I'm looking at you Ahmad)))
 
-    double vx = v*cos(vAngle*(M_PI/180));
+    float vx = v*cos(vAngle*(M_PI/180));
     //the current x component of the velocity of the frisbee
-    double vy = v*sin(vAngle*(M_PI/180));
+    float vy = v*sin(vAngle*(M_PI/180));
     //the current y component of the velocity of the frisbee
 
-    double deltavx = 0;
+    float deltavx = 0;
     //the difference in the x component of the velocity of the frisbee
-    double deltavy = 0;
+    float deltavy = 0;
     //the difference in the y compoenet of the velocity of the frisbee
 
-    double discAngle = 40;
+    float discAngle = 40;
 
-    double ALPHA = 40;
+    float ALPHA = 40;
     //the angle of the attack of the frisbee
 
-    double time = 0;
+    float time = 0;
     //the current time of the simulation
-    double deltaT = 0.0001;
+    float deltaT = 0.0001;
     //the difference in time between each iteration
 
-    double CL = CL0 + CLA*ALPHA*M_PI/180;
+    float CL = CL0 + CLA*ALPHA*M_PI/180;
     //the coefficient of lift of the frisbee
-    double CD = CD0 + CDA*pow((ALPHA - ALPHA0)*M_PI/180, 2);
+    float CD = CD0 + CDA*pow((ALPHA - ALPHA0)*M_PI/180, 2);
     //the coefficient of drag of the frisbee
 
     int iterations = 0;
@@ -113,7 +113,7 @@ int main(){
         //resets the time after the simulation
 
         while(x < xDes){
-            ALPHA = discAngle - atan(vy/vx);
+            ALPHA = discAngle - ((atan(vy/vx)) * (180/M_PI));
 
             CL = CL0 + CLA*ALPHA*M_PI/180;
             CD = CD0 + CDA*pow((ALPHA - ALPHA0)*M_PI/180, 2);
@@ -157,11 +157,11 @@ int main(){
     cout << "number of internal iterations: " << iterations << endl;
     //prints the number of iterations to the output
 
-    ofstream fw("C:\\Users\\chris\\Documents\\test-with-good-alpha.txt", std::ofstream::out);
+    ofstream fw("C:\\Users\\chris\\Documents\\original-flight-sim-test.txt", std::ofstream::out);
     //opens up a text file. ^^^^^^^^^^^^^^^^^^^^^^^^^^       ^ This is the text files name
     //                      CHANGE THIS TO A FOLDER ON YOUR OWN COMPUTER BEFORE RUNNING. I have literally no idea what will happen if you don't.
 
-    cout << "y value after termination: " << y << ", desired y value: " << yDes << ", velocity after termination: " << v << endl;
+    cout << "y value after termination: " << y << ", x value after termination: " << x << ", desired y value: " << yDes << ", desired x value: " << xDes << ", velocity after termination: " << v << endl;
     //prints out the final simulated y value, the desired y value, and the required velocity to the output
 
     x = xInit;
