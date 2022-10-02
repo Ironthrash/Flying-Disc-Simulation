@@ -24,13 +24,13 @@ int main(){
     float g = -9.81;
     //the force of gravity
 
-    float m = 0.065;
+    float m = 0.175;
     //the mass of the projectile
 
     float RHO = 1.23;
     //the density of air in metric units
 
-    float AREA = 0.015;
+    float AREA = 0.041;
     //the approximate area of the flat side of the frisbee
 
     float CL0 = 0.1;
@@ -157,7 +157,7 @@ int main(){
     cout << "number of internal iterations: " << iterations << endl;
     //prints the number of iterations to the output
 
-    ofstream fw("C:\\Users\\chris\\Documents\\original-flight-sim-test.txt", std::ofstream::out);
+    ofstream fw("C:\\Users\\chris\\Documents\\original-flight-sim-test-with-velocity.txt", std::ofstream::out);
     //opens up a text file. ^^^^^^^^^^^^^^^^^^^^^^^^^^       ^ This is the text files name
     //                      CHANGE THIS TO A FOLDER ON YOUR OWN COMPUTER BEFORE RUNNING. I have literally no idea what will happen if you don't.
 
@@ -196,7 +196,7 @@ int main(){
         time = time + deltaT;
         //changes the time in the simulation based on the delta time
 
-        fw << x << ", " << y << ", " << time << endl;
+        fw << x << ", " << y << ", " << vx << ", " << vy << ", " << time << endl;
         //exports the x & y values of the frisbee, and the final time of the simulation in the text file
     }
     //does a final simulation of the frisbee so that the final result can be exported as a text file
