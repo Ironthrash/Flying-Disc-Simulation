@@ -33,14 +33,14 @@ int main(){
     float AREA = 0.041;
     //the approximate area of the flat side of the frisbee
 
-    float CL0 = 0.1;
+    float CL0 = 0;
     //the coefficient of lift independent of the angle of attack
-    float CLA = 1.4;
+    float CLA = 2;
     //the coefficient of lift dependent on the angle of attack
 
-    float CD0 = 0.08;
+    float CD0 = 0.2;
     //the coefficient of drag independent of the angle of attack
-    float CDA = 2.72;
+    float CDA = 2.5;
     //the coefficient of drag dependent on the angle of attack
 
     float ALPHA0 = 0;
